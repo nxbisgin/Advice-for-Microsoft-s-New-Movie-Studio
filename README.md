@@ -8,13 +8,12 @@ Using explatory data analysis, I tried to understand what are some important fac
 
 ## Business Problem
 
-***
     The business needs general overview about the movie industry. 
     
     I believe deciding on the movie genre and the people to work with for the movie are important factors and is a good starting point for a new movie studio. Given the data, I think ratings and profit are good measures of success for a movie.
     
     If we understand which genres are more profitable and have higher ratings, the business can invest in those kind of movies. 
-***
+    
 ## Data Understanding
 
 ***
