@@ -9,35 +9,20 @@ Using explatory data analysis, I tried to understand what are some important fac
 ## Business Problem
 
 ***
-Questions to consider:
-* What are the business's pain points related to this project?
-
     The business needs general overview about the movie industry. 
     
-* How did you pick the data analysis question(s) that you did?
-
     I believe deciding on the movie genre and the people to work with for the movie are important factors and is a good starting point for a new movie studio. Given the data, I think ratings and profit are good measures of success for a movie.
     
-* Why are these questions important from a business perspective?
-
     If we understand which genres are more profitable and have higher ratings, the business can invest in those kind of movies. 
 ***
 ## Data Understanding
 
 ***
-Questions to consider:
+    The data is collected from Box Office Mojo, IMDB, Rotten Tomatoes, and TheMovieDB.org. The data has information about movie titles, genres, directors, actors, profits, release year.
 
-* Where did the data come from, and how do they relate to the data analysis questions?
+    The data provides information about 16184 movies when merged on common columns. I have included information about movie genres, profit, primary people such as directors, writers and actors along with ratings.
 
-The data is collected from Box Office Mojo, IMDB, Rotten Tomatoes, and TheMovieDB.org. The data has information about movie titles, genres, directors, actors, profits, release year.
-
-* What do the data represent? Who is in the sample and what variables are included?
-
-The data provides information about 16184 movies when merged on common columns. I have included information about movie genres, profit, primary people such as directors, writers and actors along with ratings.
-
-* What is the target variable?
-
-Target variables are the ratings and profit.
+    Target variables are the ratings and profit.
 
 ***
 
@@ -45,64 +30,42 @@ Target variables are the ratings and profit.
 
 ### Data Preparation
 ***
-Questions to consider:
-* How did you prepare the data?
-
-Here are the datasets that I used for analysis:
+    Here are the datasets that I used for analysis:
     
-imdb datasets: imdb_title_basics, imdb_title_crew, imdb_title_principals, imdb_title_ratings, imdb_name_basics
+        imdb datasets: imdb_title_basics, imdb_title_crew, imdb_title_principals, imdb_title_ratings, imdb_name_basics
 
-tmdb dataset: tmdb_movies
+        tmdb dataset: tmdb_movies
 
-bom dataset: bom_movie_gross
+        bom dataset: bom_movie_gross
 
-tn dataset: tn_movie_budgets
-
-* Were there variables you dropped?
+        tn dataset: tn_movie_budgets
     
     I dropped the following columns from the data:
 
-        original_title, primary_title, Unnamed: 0, genre_ids, id, nconst, tconst,
-        original_language, release_date, start_year, birth_year, death_year, 
-        known_for_titles,  'category', 'job', 'characters', 
-        'vote_count', 'runtime_minutes', 'ordering'
-* Were there variables you created?
+        original_title, primary_title, Unnamed: 0, genre_ids, id, nconst, tconst, original_language, release_date, start_year, birth_year, death_year, 
+        known_for_titles,  'category', 'job', 'characters', 'vote_count', 'runtime_minutes', 'ordering'
        
-       I created a value 'profit', which is simply the worldwide_gross minus production_cost.
+    I created a value 'profit', which is simply the worldwide_gross minus production_cost.
        
-* How did you address missing values or outliers?
-
-        I dropped rows with missing worldwide_gross or production_cost values.
+    I dropped rows with missing worldwide_gross or production_cost values.
         
-* Why are these choices appropriate given the data and the business problem?
-
-        Dropping the nan values, rather than replacing them is an appropriate choice, since I want to provide accurate information.
+    I believe, dropping the nan values, rather than replacing them is an appropriate choice, since I want to provide accurate information.
         
-* Were there variables you dropped?
+    I later dropped studio, year, domestic_gross, foreign_gross, worldwide_gross columns, since they are not necessary for further analysis.
 
-        I later dropped studio, year, domestic_gross, foreign_gross, worldwide_gross columns, since they are not necessary for further analysis.
-
-* Why is this approach appropriate given the data and the business problem?
 ***
 
 ### Data Modeling
 
 ***
-Questions to consider:
-* How did you analyze or model the data?
-
     I wanted to understand the profitability of different genres of movies.
+   
     I also wanted to analyze the change of ratings for different genres. I checked both imdb and tmdb ratings.
     
     Secondly, I wanted to find out whom Microsoft should work with for the best profit. Which directors, writers or actors are deriving the most profitable movies and which of them have the best ratings?
     
-    
-* How did you iterate on your initial approach to make it better?
-
     I used the domestic_gross and foreign_gross to calculate the profit at my first attempt. Then, I found out the information about production_budget, so I included that in the calculation to get a better result.
     
-* Why are these choices appropriate given the data and the business problem?
-
     I think deciding the genres of the movie and whom to work with based on the profit and ratings is a good step for a first attempt at creating a new movie studio. This will give an general sense of the indsutry.
     
 ***
@@ -110,27 +73,17 @@ Questions to consider:
 ## Evaluation
 
 ***
-Questions to consider:
-* How do you interpret the results?
-
     We have some general knowledge about how to make a profitable and popular movie in terms of genres and directors, writers and actors. I think this is a good first step in analysis.
     
-* How confident are you that your results would generalize beyond the data you have?
-
     I think these results would generalize beyond this data because there are 16184 movies, which is a quite large number.
     
-* How confident are you that this model would benefit the business if put into use?
-
     I think this analysis will be helpful in choosing genres and people to work with.
 ***
 
 ## Conclusions
 
 ***
-Questions to consider:
-* What would you recommend the business do as a result of this work?
-
-        In terms of best movie genres for the highest profit, here are the top 10 genres that I would recommend:
+    In terms of best movie genres for the highest profit, here are the top 10 genres that I would recommend:
         
         1. Adventure,Drama,Sport
         2. Biography,Documentary,History
@@ -224,12 +177,8 @@ Questions to consider:
 
 ![graph1](./images/IMDBratingByPeople.png)
 
-* What are some reasons why your analysis might not fully solve the business problem?
-
         I think there are many other factors to consider, such as the time of the year, the economy or any crisis going on, that are not included in this analysis. Therefore, this primary analysis will give a general idea about where to start, but more analysis should be done for better understanding of the industry.
         
-* What else could you do in the future to improve this project?
-
         I can focus on directors, or actors in specific instead of people in general. I can also seperate genre categories and do a more comprehensive analysis.
 ***
 
