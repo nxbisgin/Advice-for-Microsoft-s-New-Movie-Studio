@@ -40,10 +40,9 @@ tn dataset: tn_movie_budgets
 
 I dropped the following columns from the data:
 
-        original_title, primary_title, Unnamed: 0, genre_ids, id, nconst, tconst,
-        original_language, release_date, start_year, birth_year, death_year, 
-        known_for_titles,  category, job, characters, vote_count, 
-        runtime_minutes, ordering, primary_profession, directors, numvotes, writers
+"original_title, primary_title, Unnamed: 0, genre_ids, id, nconst, tconst, original_language, 
+release_date, start_year, birth_year, death_year, known_for_titles,  category, job, characters, 
+vote_count, runtime_minutes, ordering, primary_profession, directors, numvotes, writers"
 
 I created a value 'profit', which is simply the worldwide_gross minus production_cost.
        
